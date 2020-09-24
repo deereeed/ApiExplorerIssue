@@ -5,7 +5,7 @@ namespace ApiExplorerIssue.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TestController : Controller
+    public class FromQueryTestController : Controller
     {
         [HttpGet("get-foo")]
         public DataQueryOptions? Foo([FromQuery] DataQueryOptions? queryOptions)
@@ -15,7 +15,6 @@ namespace ApiExplorerIssue.Controllers
 
         public class DataQueryOptions
         {
-            /// <summary> Paging settings </summary>
             [FromQuery(Name = "paging")]
             public DataQueryPaging? Paging { get; set; }
         }
